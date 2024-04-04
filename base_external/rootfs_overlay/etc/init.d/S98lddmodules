@@ -8,6 +8,8 @@ case "$1" in
         module_load faulty
         echo "loading hello module"
         modprobe hello
+        echo "loading aesd char driver"
+        aesdchar_load
         ;;
 
     stop)
@@ -17,6 +19,8 @@ case "$1" in
         module_unload faulty
         echo "unloading hello module"
         rmmod hello
+        echo "unloading aesd char driver"
+        aesdchar_unload
         ;;
 
     *)
